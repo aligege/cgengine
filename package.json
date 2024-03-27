@@ -1,30 +1,36 @@
 {
-  "scripts": {
-    "build": "webpack --env mode=production",
-    "build:dev": "webpack --env mode=development",
-    "start": "webpack serve --env mode=development"
-  },
-  "devDependencies": {
-    "@babylonjs/core": "^6.48.1",
-    "@babylonjs/gui": "^6.48.1",
-    "@babylonjs/loaders": "^6.48.1",
-    "@babylonjs/materials": "^6.48.1",
-    "@babylonjs/post-processes": "^6.48.1",
-    "@babylonjs/procedural-textures": "^6.48.1",
-    "@babylonjs/serializers": "^6.48.1",
-    "@babylonjs/viewer": "^6.48.1",
-    "clean-webpack-plugin": "^4.0.0",
-    "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.0",
-    "source-map-loader": "^4.0.1",
-    "ts-loader": "^9.4.1",
-    "typescript": "^4.8.4",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
-  },
-  "dependencies": {
-    "copy-webpack-plugin": "^11.0.0",
-    "earcut": "^2.2.4"
-  }
+    "name": "babylonjs-editor-generated-template",
+    "version": "4.1.0",
+    "description": "Generated Template by BabylonJS Editor v4.1",
+    "scripts": {
+        "clean": "rimraf build declaration dist",
+        "compile": "tsc -p .",
+        "build": "webpack --mode production",
+        "watch": "webpack --mode development --watch",
+        "webserver": "http-server -p 1338 -c-1"
+    },
+    "license": "(Apache-2.0)",
+    "devDependencies": {
+        "@types/node": "17.0.0",
+        "@types/webpack": "5.28.0",
+        "typescript": "4.5.4",
+        "http-server": "0.12.1",
+        "webpack": "5.65.0",
+        "webpack-cli": "4.9.1",
+        "ts-loader": "9.2.6",
+        "raw-loader": "4.0.2",
+        "babel-loader": "8.2.3",
+        "babylonjs-editor-webpack-progress": "1.0.3"
+    },
+    "dependencies": {
+        "rimraf": "3.0.2",
+        "@babylonjs/core": "6.0.0",
+        "@babylonjs/loaders": "6.0.0",
+        "@babylonjs/materials": "6.0.0",
+        "@babylonjs/post-processes": "6.0.0",
+        "@babylonjs/procedural-textures": "6.0.0",
+        "@babylonjs/gui": "6.0.0",
+        "cannon": "0.6.2",
+        "earcut": "2.2.3"
+    }
 }
