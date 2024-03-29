@@ -9,6 +9,7 @@ export declare class Game {
      * Defines the scene used to store and draw elements in the canvas.
      */
     scene: Scene;
+    protected _canvas: HTMLCanvasElement;
     /**
      * Constructor.
      */
@@ -21,4 +22,5 @@ export declare class Game {
      * Binds the required events for a full experience.
      */
     private _bindEvents;
+    protected _showSkin(): Promise<void>;
 }

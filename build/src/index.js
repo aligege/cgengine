@@ -46,10 +46,15 @@ var Game = /** @class */ (function () {
      * Constructor.
      */
     function Game() {
-        this.engine = new core_1.Engine(document.getElementById("renderCanvas"), true);
+        this._canvas = document.getElementById("renderCanvas");
+        this.engine = new core_1.Engine(this._canvas, true);
         this.scene = new core_1.Scene(this.engine);
+        console.log("---------------------_bindEvents");
         this._bindEvents();
+        console.log("---------------------_loadScene");
         this._loadScene();
+        console.log("---------------------_showSkin");
+        this._showSkin();
     }
     /**
      * Loads the first scene.
@@ -63,7 +68,9 @@ var Game = /** @class */ (function () {
                     case 0:
                         rootUrl = "./scenes/_assets/";
                         core_1.BabylonFileLoaderConfiguration.LoaderInjectedPhysicsEngine = CANNON;
-                        return [4 /*yield*/, (0, tools_1.appendScene)(this.scene, rootUrl, "../scene/scene.babylon")];
+                        return [4 /*yield*/, (0, tools_1.appendScene)(this.scene, rootUrl, "../scene/scene.babylon")
+                            // Attach camera.
+                        ];
                     case 1:
                         _a.sent();
                         // Attach camera.
@@ -84,6 +91,27 @@ var Game = /** @class */ (function () {
     Game.prototype._bindEvents = function () {
         var _this = this;
         window.addEventListener("resize", function () { return _this.engine.resize(); });
+    };
+    Game.prototype._showSkin = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var url, res, blob;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        url = "C:/Users/Admin/AppData/LocalLow/DefaultCompany/jh3d/skin_1711516180884_142054.zip";
+                        console.log("---------------------begin:" + url);
+                        return [4 /*yield*/, fetch(url)];
+                    case 1:
+                        res = _a.sent();
+                        console.log("---------------------:" + res);
+                        return [4 /*yield*/, res.blob()];
+                    case 2:
+                        blob = _a.sent();
+                        console.log("---------------------:" + blob);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     return Game;
 }());
